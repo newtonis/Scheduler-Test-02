@@ -1,0 +1,10 @@
+<mat-form-field class="add-materia-input" appearance="legacy">
+    <mat-label>Agregar materia</mat-label>
+    <input #searchBox matInput placeholder="Placeholder" (input)="search(searchBox.value)">
+    <ul class="search-result">
+        <li *ngFor="let materia of materias$ | async" >
+            {{materia.nombre}} - {{materia.codigo}}
+        </li>
+    </ul>
+
+</mat-form-field>

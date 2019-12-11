@@ -6,19 +6,36 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatStepperModule } from '@angular/material/stepper';
 import { StepperControlComponent } from './stepper-control/stepper-control.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { SeleccionadorDeMateriasComponent } from './seleccionador-de-materias/seleccionador-de-materias.component';
+import { DemoMaterialModule } from './material-module';
+import { TablaDeMateriasComponent } from './tabla-de-materias/tabla-de-materias.component';
+import { BuscadorDeMateriasComponent } from './buscador-de-materias/buscador-de-materias.component';
+import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import { InMemoryDataMateriasService } from './in-memory-data-materias.service';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
     AppComponent,
-    StepperControlComponent
+    StepperControlComponent,
+    SeleccionadorDeMateriasComponent,
+    TablaDeMateriasComponent,
+    BuscadorDeMateriasComponent
   ],
   imports: [
     BrowserModule,
+    FlexLayoutModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatStepperModule,
-    MatToolbarModule
+    MatToolbarModule,
+    DemoMaterialModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataMateriasService, {dataEncapsulation: false}
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
