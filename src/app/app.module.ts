@@ -15,6 +15,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import { InMemoryDataMateriasService } from './in-memory-data-materias.service';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import {FormsModule, ReactiveFormsModule, FormControl} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
   imports: [
     BrowserModule,
     FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatStepperModule,

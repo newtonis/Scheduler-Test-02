@@ -29,6 +29,9 @@ export class MateriasService {
       catchError(this.handleError<Materia[]>('materias',[]))
     );
   }
+  getMaterias(){
+      return this.http.get<Materia[]>(this.getMateriasUrl);
+  }
   private handleError<T>(operation = 'operation', result?:T){
     return (error: any): Observable<T> => {
       console.error(error);
