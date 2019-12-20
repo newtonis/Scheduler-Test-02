@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutAlign="space-around stretch" fxFill>
+  <mat-card *ngFor="let materia of materias.value" class="example-card" fxFlex="0 1 90">
+    <mat-card-header>
+      <mat-card-title>
+        {{materia.nombre}} - {{materia.codigo}}
+      </mat-card-title>
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label>Comisión A</mat-label>
+          <select matNativeControl required>
+            <option value="volvo">Comision A</option>
+            <option value="saab">Comision B</option>
+            <option value="mercedes">Comision C</option>
+          </select>
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card-header>
+  </mat-card>
+</div>

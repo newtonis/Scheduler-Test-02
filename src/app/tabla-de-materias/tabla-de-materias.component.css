@@ -10,3 +10,6 @@ table {
 .add-codigo-input{
     max-width: 120px;
 }
+.mat-row:hover {
+    background-color: #ffcccc;
+}

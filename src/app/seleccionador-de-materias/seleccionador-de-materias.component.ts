@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { CombinacionDeHorarioService } from '../combinacion-de-horario.service'
 
 
 @Component({
@@ -8,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seleccionador-de-materias.component.css']
 })
 export class SeleccionadorDeMateriasComponent implements OnInit {
-  
-
-  constructor() { }
+  constructor(private combinacionDeHorarioService: CombinacionDeHorarioService) { }
 
   ngOnInit() {
   }
