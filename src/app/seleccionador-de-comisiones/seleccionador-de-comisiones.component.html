@@ -1,0 +1,13 @@
+<mat-accordion fxFlex="0 1 90" fxLayout="column">
+  <mat-expansion-panel *ngFor="let materia of materias.value" class="example-card">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{materia.nombre}} - {{materia.codigo}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Seleccionar comisiones
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+  </mat-expansion-panel>
+</mat-accordion>

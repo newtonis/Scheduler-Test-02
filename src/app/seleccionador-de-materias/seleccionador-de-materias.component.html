@@ -3,17 +3,9 @@
     <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="20px">
         <div fxFill> <b>Materias seleccionadas</b> </div>
     
-        <app-tabla-de-materias fxFill>
+        <app-tabla-de-materias (getMaterias)="configurarObservable($event)" fxFill>
         </app-tabla-de-materias>
-
-        <mat-form-field appearance="outline" fxFill fxFlex="80px">
-            <mat-label>Agregar materia</mat-label>
-            <input matInput placeholder="Ingresar materia">
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            <mat-hint>Hint</mat-hint>
-        </mat-form-field>
-        <app-tabla-de-materias fxFill>
-        </app-tabla-de-materias>
+    
     </div>
 </mat-card>
 <mat-divider>   

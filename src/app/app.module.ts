@@ -15,6 +15,9 @@ import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import { InMemoryDataMateriasService } from './in-memory-data-materias.service';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import {FormsModule, ReactiveFormsModule, FormControl} from '@angular/forms';
+import { SeleccionadorDeComisionesComponent } from './seleccionador-de-comisiones/seleccionador-de-comisiones.component';
+import { DragComisionesComponent } from './drag-comisiones/drag-comisiones.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,15 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     StepperControlComponent,
     SeleccionadorDeMateriasComponent,
     TablaDeMateriasComponent,
-    BuscadorDeMateriasComponent
+    BuscadorDeMateriasComponent,
+    SeleccionadorDeComisionesComponent,
+    DragComisionesComponent
   ],
   imports: [
     BrowserModule,
     FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatStepperModule,

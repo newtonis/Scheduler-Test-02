@@ -1,16 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { Materia } from '../materia';
+import { BehaviorSubject, Observable } from 'rxjs'
+import { EventEmitter } from 'protractor';
+import { CombinacionDeHorarioService } from '../combinacion-de-horario.service'
 
-export interface PeriodicElement {
-  name: string;
-  code : number;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {code: 22.05, name: 'Física I'},
-  {code: 44.23, name: 'Matematica I'},
-  {code: 11.42, name: 'Algebra Lineal'},
-  {code: 54.12, name: 'Quimica I'},
-
+const ELEMENT_DATA: Materia[] = [
 ];
 
 @Component({
@@ -20,10 +14,35 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class TablaDeMateriasComponent implements OnInit {
   displayedColumns: string[] = ['name', 'code'];
-  dataSource = ELEMENT_DATA;
-  constructor() { }
+  data : Materia[] = [];
+  dataSource = new BehaviorSubject<Materia[]>([]);
+
+  constructor(private combinacionService : CombinacionDeHorarioService) { }
 
   ngOnInit() {
+    
   }
+  private addMateria(materia : Materia){
+    console.log("agregando materia ");
+    console.log(materia);
+    this.data.push(
+      {nombre: materia.nombre, codigo: materia.codigo, search: materia.search});
+    
+    this.dataSource.next(this.data);
+    this.combinacionService.updateMaterias(this.dataSource.value);
 
+    console.log(this.data);
+  }
+  private removeMateria(materia){
+    console.log("Eliminando ...");
+    console.log(materia);
+
+    this.data.splice(this.data.findIndex((item : Materia) => item.codigo == materia.codigo),1);
+    console.log(this.data);
+
+    this.dataSource.next(this.data);
+    this.combinacionService.updateMaterias(this.dataSource.value);
+    
+    console.log(this.dataSource);
+  }
 }
