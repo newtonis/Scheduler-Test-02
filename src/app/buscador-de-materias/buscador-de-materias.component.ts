@@ -30,6 +30,10 @@ export class BuscadorDeMateriasComponent implements OnInit {
     
     this.options = this.materiasService.getMaterias();
 
+    this.options.subscribe(
+      (materias :Materia[]) => (console.log(materias) )
+    );
+
     this.myControl.valueChanges.subscribe(
       val => this.updateWrittenValue(val)
     );
